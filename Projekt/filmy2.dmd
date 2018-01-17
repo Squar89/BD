@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="filmy2" id="B5B3A922-975F-DFA6-36CE-64220A50ED36" version="3.5">
+<createdBy>squar</createdBy>
+<createdTime>2018-01-17 12:57:48 UTC</createdTime>
+<ownerDesignName>filmy2</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B5B3A922-975F-DFA6-36CE-64220A50ED36</designId>
+</OSDM_Design>
