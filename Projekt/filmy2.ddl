@@ -4,6 +4,7 @@ CREATE TABLE film (
     rok_produkcji   VARCHAR2(4 CHAR) NOT NULL,
     czas_trwania    INTEGER NOT NULL,
     srednia_ocen    FLOAT(2),
+    liczba_ocen     INTEGER NOT NULL,
     gatunek_id      INTEGER NOT NULL,
     rezyser_id      INTEGER NOT NULL
 );
@@ -47,8 +48,7 @@ ALTER TABLE priorytet ADD CONSTRAINT priorytet_pk PRIMARY KEY ( id );
 CREATE TABLE rezyser (
     id              INTEGER NOT NULL,
     imie            VARCHAR2(20 CHAR) NOT NULL,
-    nazwisko        VARCHAR2(30 CHAR) NOT NULL,
-    rok_urodzenia   VARCHAR2(4 CHAR) NOT NULL
+    nazwisko        VARCHAR2(30 CHAR) NOT NULL
 );
 
 ALTER TABLE rezyser ADD CONSTRAINT rezyser_pk PRIMARY KEY ( id );

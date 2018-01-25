@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
+#include <time.h>
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -28,7 +29,7 @@ map <int, Movie> moviesMap;
 vector <Director> directorsVector;
 
 int addDirector(string firstName, string lastName) {
-    for (int i = 0; i < directorsVector.size(); i++) {
+    for (size_t i = 0; i < directorsVector.size(); i++) {
         if (directorsVector[i].firstName == firstName && directorsVector[i].lastName == lastName) {
             return i + 1;
         }
@@ -94,7 +95,7 @@ int main() {
             const char *c_line = line.c_str();
             id = strtoul(c_line, NULL, 0);
 
-            int namePos = line.find("Director\"\", \"\"name\"\":");
+            auto namePos = line.find("Director\"\", \"\"name\"\":");
             //cout << namePos << endl;
             if (namePos != string::npos) {
                 namePos += 23;
@@ -120,5 +121,20 @@ int main() {
     }
     else cout << "Unable to open file credits";
 
-    
+    for (size_t i = 0; i < directorsVector.size(); i++) {
+        cout << "INSERT INTO rezyser (id, imie, nazwisko) VALUES (" << i + 1 << ", '" << directorsVector[i].firstName << "', '" << directorsVector[i].lastName << "');\n";
+    }
+
+    cout << endl << endl << endl;
+
+    int movieId = 1;
+    srand(time(NULL));
+    for (auto it = moviesMap.begin(); it != moviesMap.end(); it++) {
+        int genreId = (rand() % 10) + 1;
+        if (it->second.directorId != 0) {
+            cout << "INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES ("
+                 << movieId++ << ", '" << it->second.title << "', '" << it->second.yearProduced << "', " << it->second.runtime << ", " << it->second.voteAvg << ", "
+                 << it->second.votes << ", " << genreId << ", " << it->second.directorId << ");\n";
+        }
+    }
 }
