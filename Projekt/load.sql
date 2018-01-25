@@ -1,3 +1,34 @@
+INSERT INTO gatunek (id, nazwa) VALUES (1, 'Dokumentalny');
+INSERT INTO gatunek (id, nazwa) VALUES (2, 'Dramat');
+INSERT INTO gatunek (id, nazwa) VALUES (3, 'Fantasy');
+INSERT INTO gatunek (id, nazwa) VALUES (4, 'Horror');
+INSERT INTO gatunek (id, nazwa) VALUES (5, 'Komedia');
+INSERT INTO gatunek (id, nazwa) VALUES (6, 'Familijny');
+INSERT INTO gatunek (id, nazwa) VALUES (7, 'Kryminalny');
+INSERT INTO gatunek (id, nazwa) VALUES (8, 'Kostiumowy');
+INSERT INTO gatunek (id, nazwa) VALUES (9, 'Melodramat');
+INSERT INTO gatunek (id, nazwa) VALUES (10, 'Mockumentary');
+INSERT INTO gatunek (id, nazwa) VALUES (11, 'Noir');
+INSERT INTO gatunek (id, nazwa) VALUES (12, 'Obyczajowy');
+INSERT INTO gatunek (id, nazwa) VALUES (13, 'Parodia');
+INSERT INTO gatunek (id, nazwa) VALUES (14, 'Przygotowy');
+INSERT INTO gatunek (id, nazwa) VALUES (15, 'Psychologiczny');
+INSERT INTO gatunek (id, nazwa) VALUES (16, 'Religijny');
+INSERT INTO gatunek (id, nazwa) VALUES (17, 'Sensacyjny');
+INSERT INTO gatunek (id, nazwa) VALUES (18, 'Wojenny');
+INSERT INTO gatunek (id, nazwa) VALUES (19, 'Thriller');
+INSERT INTO gatunek (id, nazwa) VALUES (20, 'Sci-Fi');
+
+
+
+INSERT INTO priorytet (id, opis) VALUES (1, 'Meh');
+INSERT INTO priorytet (id, opis) VALUES (2, 'Moze kiedys');
+INSERT INTO priorytet (id, opis) VALUES (3, 'Kiedys obejrze');
+INSERT INTO priorytet (id, opis) VALUES (4, 'Musze obejrzec');
+INSERT INTO priorytet (id, opis) VALUES (5, 'Ogladam dzisiaj!');
+
+
+
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (1, 'James', 'Cameron');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (2, 'Gore', 'Verbinski');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (3, 'Sam', 'Mendes');
@@ -399,7 +430,7 @@ INSERT INTO rezyser (id, imie, nazwisko) VALUES (398, 'Jean-Pierre', 'Jeunet');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (399, 'Anthony', 'Stacchi');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (400, 'Griffin', 'Dunne');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (401, 'John', 'Pasquin');
-INSERT INTO rezyser (id, imie, nazwisko) VALUES (402, 'Brian', ''Joker' Mulvey');
+INSERT INTO rezyser (id, imie, nazwisko) VALUES (402, 'Brian', '''Joker'' Mulvey');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (403, 'Austin', 'Gorg');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (404, 'Harold', 'Ramis');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (405, 'Kevin', 'Macdonald');
@@ -1493,7 +1524,7 @@ INSERT INTO rezyser (id, imie, nazwisko) VALUES (1492, 'Peter', 'Faiman');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (1493, 'Martyn', 'Pick');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (1494, 'Roland', 'Suso Richter');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (1495, 'Jeremy', 'Sims');
-INSERT INTO rezyser (id, imie, nazwisko) VALUES (1496, 'Maiwenn', '');
+INSERT INTO rezyser (id, imie, nazwisko) VALUES (1496, 'Maiwenn', '''empty''');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (1497, 'Joby', 'Harold');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (1498, 'Ekachai', 'Uekrongtham');
 INSERT INTO rezyser (id, imie, nazwisko) VALUES (1499, 'Mark', 'Rydell');
@@ -5857,7 +5888,7 @@ INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_o
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3404, 'The Lion of Judah', '2011', 87, 5.8, 2, 5, 2113);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3405, 'Don''t Be Afraid of the Dark', '2010', 99, 5.4, 341, 4, 875);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3406, 'Of Gods and Men', '2010', 120, 6.5, 91, 4, 1724);
-INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3407, 'Neal 'n' Nikki', '2005', 122, 2.3, 4, 7, 2109);
+INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3407, 'Neal ''n'' Nikki', '2005', 122, 2.3, 4, 7, 2109);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3408, 'The Loved Ones', '2009', 84, 6.6, 207, 9, 1820);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3409, 'Topsy-Turvy', '1999', 160, 6.7, 41, 1, 1011);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3410, 'All Good Things', '2010', 101, 5.9, 286, 1, 1026);
@@ -5931,7 +5962,7 @@ INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_o
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3478, 'Fantasia 2000', '1999', 74, 7, 292, 4, 272);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3479, 'The Roommate', '2011', 91, 5.3, 224, 2, 1115);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3480, 'Certifiably Jonathan', '2007', 85, 0, 0, 3, 2121);
-INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3481, 'A Turtle's Tale: Sammy's Adventures', '2010', 88, 5.6, 151, 3, 712);
+INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3481, 'A Turtle''s Tale: Sammy''s Adventures', '2010', 88, 5.6, 151, 3, 712);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3482, 'Walking and Talking', '1996', 86, 6.6, 7, 9, 1529);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3483, 'The Help', '2011', 146, 7.8, 1910, 5, 768);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3484, 'Lovely and Amazing', '2001', 91, 6.3, 23, 8, 1529);
@@ -7056,7 +7087,7 @@ INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_o
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4603, 'Dragon Blade', '2015', 127, 5.9, 145, 10, 367);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4604, '13 Hours: The Secret Soldiers of Benghazi', '2016', 144, 7, 938, 1, 29);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4605, 'The Finest Hours', '2016', 114, 6.3, 588, 5, 345);
-INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4606, 'Let's Kill Ward's Wife', '2014', 81, 5.5, 76, 7, 1755);
+INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4606, 'Let''s Kill Ward''s Wife', '2014', 81, 5.5, 76, 7, 1755);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4607, '#Horror', '2015', 90, 3.3, 52, 8, 2092);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4608, 'We Are Your Friends', '2015', 96, 6.3, 658, 3, 1990);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4609, 'The Neon Demon', '2016', 117, 6.4, 887, 9, 1161);
@@ -7177,7 +7208,7 @@ INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_o
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4724, 'Checkmate', '2015', 102, 4.2, 13, 7, 2091);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4725, 'Abandoned', '2015', 82, 5.8, 27, 7, 2035);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4726, 'The Algerian', '2015', 99, 0, 0, 2, 2115);
-INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4727, 'Dancin' It's On', '2015', 89, 4.3, 2, 1, 1340);
+INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4727, 'Dancin'' It''s On', '2015', 89, 4.3, 2, 1, 1340);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4728, 'A Tale of Three Cities', '2015', 130, 6.3, 5, 8, 1343);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4729, 'Queen Crab', '2015', 90, 3.3, 3, 5, 2408);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4730, 'Eden', '2015', 97, 5.6, 19, 1, 1966);
