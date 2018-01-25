@@ -17,4 +17,4 @@ INSERT INTO gatunek (id, nazwa) VALUES (16, 'Religijny');
 INSERT INTO gatunek (id, nazwa) VALUES (17, 'Sensacyjny');
 INSERT INTO gatunek (id, nazwa) VALUES (18, 'Wojenny');
 INSERT INTO gatunek (id, nazwa) VALUES (19, 'Thriller');
-INSERT INTO gatunek (id, nazwa) VALUES (20, 'Sci-Fi)';
+INSERT INTO gatunek (id, nazwa) VALUES (20, 'Sci-Fi');
