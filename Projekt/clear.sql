@@ -5,3 +5,5 @@ DROP TABLE priorytet;
 DROP TABLE film;
 DROP TABLE rezyser;
 DROP TABLE gatunek;
+
+DROP VIEW lista_do_obejrzenia;
