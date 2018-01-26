@@ -11,7 +11,7 @@ START WITH 1
 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER id_uzytkownik_trigger
-BEFORE INSERT ON osoba
+BEFORE INSERT ON uzytkownik
 FOR EACH ROW
 BEGIN
   SELECT id_uzytkownik_seq.nextval INTO :NEW.id FROM dual;
