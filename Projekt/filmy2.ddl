@@ -21,6 +21,7 @@ ALTER TABLE gatunek ADD CONSTRAINT gatunek_pk PRIMARY KEY ( id );
 CREATE TABLE ocena_filmu (
     id              INTEGER NOT NULL,
     opinia          VARCHAR2(200 CHAR),
+    ocena           INTEGER,
     film_id         INTEGER NOT NULL,
     uzytkownik_id   INTEGER NOT NULL
 );
@@ -35,8 +36,9 @@ CREATE TABLE pozycja (
     uzytkownik_id   INTEGER NOT NULL
 );
 
-ALTER TABLE pozycja ADD CONSTRAINT pozycja_pk PRIMARY KEY ( pozycja,
-uzytkownik_id );
+ALTER TABLE pozycja ADD CONSTRAINT pozycja_pk PRIMARY KEY ( pozycja, uzytkownik_id );
+
+ALTER TABLE pozycja ADD CONSTRAINT no_duplicates UNIQUE ( film_id, uzytkownik_id );
 
 CREATE TABLE priorytet (
     id     INTEGER NOT NULL,
