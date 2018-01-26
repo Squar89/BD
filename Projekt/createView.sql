@@ -8,7 +8,7 @@ CREATE SEQUENCE id_nowy_uzytkownik
 START WITH 1
 INCREMENT BY 1;
 
-CREATE SEQUENCE id_opinia
+CREATE SEQUENCE id_ocena
 START WITH 1
 INCREMENT BY 1;
 
@@ -20,10 +20,10 @@ BEGIN
 END;
 /
 
-CREATE TRIGGER id_opinia_trigger
-BEFORE INSERT ON opinia
+CREATE TRIGGER id_ocena_trigger
+BEFORE INSERT ON ocena_filmu
 FOR EACH ROW
 BEGIN
-  SELECT id_opinia_seq.nextval INTO :NEW.id FROM dual;
+  SELECT id_ocena_seq.nextval INTO :NEW.id FROM dual;
 END;
 /
