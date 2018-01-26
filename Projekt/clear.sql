@@ -8,8 +8,8 @@ DROP TABLE gatunek;
 
 DROP VIEW lista_do_obejrzenia;
 
-DROP SEQUENCE id_uzytkownik_s;
-DROP SEQUENCE id_ocena_s;
+DROP SEQUENCE id_uzytkownik_seq;
+DROP SEQUENCE id_ocena_seq;
 
 DROP TRIGGER id_uzytkownik_trigger;
 DROP TRIGGER id_ocena_trigger;
