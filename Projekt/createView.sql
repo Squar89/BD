@@ -25,3 +25,17 @@ BEGIN
   SELECT id_ocena_seq.nextval INTO :NEW.id FROM dual;
 END;
 /
+
+CREATE OR REPLACE TRIGGER update_rating
+AFTER INSERT ON ocena_filmu
+FOR EACH ROW UPDATE film
+DECLARE
+  incr int := 1;
+BEGIN
+  IF :NEW.ocena IS NOT NULL
+    SET film.liczba_ocen = (SELECT liczba_ocen + incr FROM film);
+    SET film.srednia_ocen = film.srednia_ocen + ((:NEW.ocena - film.srednia_ocen) / film.liczba_ocen);
+  END IF;
+END;
+WHERE film.id = :NEW.film_id;
+/
