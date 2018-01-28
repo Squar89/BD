@@ -28,8 +28,6 @@ CREATE TABLE ocena_filmu (
 
 ALTER TABLE ocena_filmu ADD CONSTRAINT ocena_filmu_pk PRIMARY KEY ( id, uzytkownik_id );
 
-/*ALTER TABLE ocena_filmu ADD CONSTRAINT one_vote_per_user UNIQUE ( film_id, uzytkownik_id );*/
-
 CREATE TABLE pozycja (
     pozycja         INTEGER NOT NULL,
     film_id         INTEGER NOT NULL,
