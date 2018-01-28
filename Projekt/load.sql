@@ -7254,3 +7254,11 @@ INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_o
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4770, 'Growing Up Smith', '2017', 102, 7.4, 7, 3, 2090);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4771, '8 Days', '2014', 90, 0, 0, 6, 1961);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4772, 'To Be Frank, Sinatra at 100', '2015', 0, 0, 0, 7, 2017);
+
+
+INSERT INTO uzytkownik (nazwa_uzytkownika) VALUES ('Squar');
+
+INSERT INTO pozycja (film_id, priorytet_id, uzytkownik_id) VALUES (357, 3, 1);
+INSERT INTO pozycja (film_id, priorytet_id, uzytkownik_id) VALUES (1246, 1, 1);
+
+INSERT INTO ocena_filmu (opinia, ocena, film_id, uzytkownik_id) VALUES ('5/7', 8, 3112, 1);
