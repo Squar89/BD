@@ -11,7 +11,7 @@ INSERT INTO gatunek (id, nazwa) VALUES (10, 'Mockumentary');
 INSERT INTO gatunek (id, nazwa) VALUES (11, 'Noir');
 INSERT INTO gatunek (id, nazwa) VALUES (12, 'Obyczajowy');
 INSERT INTO gatunek (id, nazwa) VALUES (13, 'Parodia');
-INSERT INTO gatunek (id, nazwa) VALUES (14, 'Przygotowy');
+INSERT INTO gatunek (id, nazwa) VALUES (14, 'Przygodowy');
 INSERT INTO gatunek (id, nazwa) VALUES (15, 'Psychologiczny');
 INSERT INTO gatunek (id, nazwa) VALUES (16, 'Religijny');
 INSERT INTO gatunek (id, nazwa) VALUES (17, 'Sensacyjny');
