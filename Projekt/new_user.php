@@ -12,17 +12,20 @@ if (!$connection) {
     exit();
 }
 
-$checkUsername = oci_parse($connection, "SELECT id FROM uzytkownik WHERE nazwa_uzytkownika = {$_POST[new_username]}");
+$checkUsername = oci_parse($connection, "SELECT id FROM uzytkownik WHERE nazwa_uzytkownika = :nazwa_uzytkownika");
+oci_bind_by_name($checkUsername, ":nazwa_uzytkownika", $_POST[new_username]);
 oci_execute($checkUsername);
 $rowCount = oci_fetch_all($checkUsername, $checkUsernameAll, 0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
-if (rowCount != 0) {
-    echo "Istnieje już uzytkownik o danej nazwie! Zaloguj sie lub wybierz inna nazwe";#Dodaj link
+
+if (!empty($checkUsernameAll)) {
+    echo '<a href="auth.php">Istnieje juz uzytkownik o danej nazwie! Zaloguj sie lub wybierz inna nazwe</a>';
     exit();
 }
 
-$addUser = oci_parse($connection, "INSERT INTO uzytkownik (nazwa_uzytkownika) VALUES ({$_POST[new_username]})");
+$addUser = oci_parse($connection, "INSERT INTO uzytkownik (nazwa_uzytkownika) VALUES ('{$_POST[new_username]}')");
+oci_bind_by_name($addUser, ":nazwa_uzytkownika", $_POST[new_username]);
 oci_execute($addUser);
-echo "Zostałeś poprawnie zarejestrowany! Kliknij tutaj, aby przejść do swojego konta";#Dodaj link
+echo '<a href="user.php">Zostales poprawnie zarejestrowany! Kliknij tutaj, aby przejsc do swojego konta</a>';
 
 oci_close($connection);
 
