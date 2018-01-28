@@ -3,7 +3,7 @@ CREATE TABLE film (
     tytul           VARCHAR2(100 CHAR) NOT NULL,
     rok_produkcji   VARCHAR2(4 CHAR) NOT NULL,
     czas_trwania    INTEGER NOT NULL,
-    srednia_ocen    NUMBER(2, 2),
+    srednia_ocen    NUMBER(4, 1),
     liczba_ocen     INTEGER NOT NULL,
     gatunek_id      INTEGER NOT NULL,
     rezyser_id      INTEGER NOT NULL
