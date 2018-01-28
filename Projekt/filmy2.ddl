@@ -21,14 +21,14 @@ ALTER TABLE gatunek ADD CONSTRAINT gatunek_pk PRIMARY KEY ( id );
 CREATE TABLE ocena_filmu (
     id              INTEGER NOT NULL,
     opinia          VARCHAR2(200 CHAR),
-    ocena           INTEGER,
+    ocena           NUMBER,
     film_id         INTEGER NOT NULL,
     uzytkownik_id   INTEGER NOT NULL
 );
 
 ALTER TABLE ocena_filmu ADD CONSTRAINT ocena_filmu_pk PRIMARY KEY ( id, uzytkownik_id );
 
-ALTER TABLE ocena_filmu ADD CONSTRAINT one_vote_per_user UNIQUE ( film_id, uzytkownik_id );
+/*ALTER TABLE ocena_filmu ADD CONSTRAINT one_vote_per_user UNIQUE ( film_id, uzytkownik_id );*/
 
 CREATE TABLE pozycja (
     pozycja         INTEGER NOT NULL,
