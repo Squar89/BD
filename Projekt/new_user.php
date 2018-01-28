@@ -1,7 +1,17 @@
 <?php
 session_start();
 if (!($_SESSION['logged_in']==true)) {
-    echo "Odmowa dostepu. Musisz sie najpierw zalogowac.<br>";
+    echo 'Odmowa dostepu. Musisz sie najpierw zalogowac. <a href="login.php">Zaloguj sie tutaj</a>';
+    exit();
+}
+
+if (!isset($_POST[new_username])) {
+    echo 'Nie jestes zalogowany. <a href="auth.php">Zaloguj sie tutaj</a>';
+    exit();
+}
+
+if ($_POST[new_username]=="") {
+    echo 'Bledna nazwa uzytkownika! <a href="auth.php">Sprobuj ponownie</a>';
     exit();
 }
 

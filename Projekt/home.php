@@ -15,7 +15,7 @@ if ($_SESSION['logged_in']==true OR ($_POST['login']=="jw386401" AND $_POST['has
     echo "Zostales poprawnie zalogowany!<br>";
 }
 else {
-    echo "Odmowa dostepu. Musisz sie najpierw zalogowac.<br>";
+    echo 'Odmowa dostepu. Musisz sie najpierw zalogowac. <a href="login.php">Zaloguj sie tutaj</a>';
     exit();
 }
 
