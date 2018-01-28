@@ -6481,7 +6481,7 @@ INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_o
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3997, 'Machete Kills', '2013', 107, 5.3, 631, 2, 365);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3998, 'Re-Kill', '2015', 87, 4.9, 34, 4, 1465);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (3999, 'Below Zero', '2011', 0, 4.4, 12, 2, 2126);
-INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4000, '21 and Over', '2013', 93, 5.7, 737, 7, 960);
+INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4000, '21 and Over', '2013', 93, 5.7, 737, 7, 960);/*
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4001, 'Escape Plan', '2013', 115, 6.7, 1659, 1, 339);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4002, 'The World''s End', '2013', 109, 6.7, 1778, 9, 245);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4003, 'Dreaming of Joseph Lees', '1999', 92, 8, 1, 10, 1862);
@@ -7253,4 +7253,4 @@ INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_o
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4769, 'Midnight Cabaret', '1990', 94, 0, 0, 6, 2330);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4770, 'Growing Up Smith', '2017', 102, 7.4, 7, 3, 2090);
 INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4771, '8 Days', '2014', 90, 0, 0, 6, 1961);
-INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4772, 'To Be Frank, Sinatra at 100', '2015', 0, 0, 0, 7, 2017);
+INSERT INTO film (id, tytul, rok_produkcji, czas_trwania, srednia_ocen, liczba_ocen, gatunek_id, rezyser_id) VALUES (4772, 'To Be Frank, Sinatra at 100', '2015', 0, 0, 0, 7, 2017);*/
