@@ -12,11 +12,10 @@ if (!($_SESSION['logged_in']==true)) {
 <title>Rejestracja</title>
 </head>
 <body>
-<hr>
 <a href="home.php">Strona glowna</a><br>
 <a href="auth.php">Zaloguj sie</a><br>
-<a href="listaFilmow.php">Lista filmow</a><bre>
-</hr>
+<a href="listaFilmow.php">Lista filmow</a><br>
+<hr>
 <h1>Rejestracja</h1>
 
 <?php
@@ -73,5 +72,6 @@ else {
 oci_close($connection);
 ?>
 
+</hr>
 </body>
 </html>

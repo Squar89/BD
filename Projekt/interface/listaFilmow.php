@@ -12,11 +12,10 @@ if (!($_SESSION['logged_in']==true)) {
 <title>Lista filmow</title>
 </head>
 <body>
-<hr>
 <a href="home.php">Strona glowna</a><br>
 <a href="auth.php">Zaloguj sie</a><br>
-<a href="listaFilmow.php">Lista filmow</a><bre>
-</hr>
+<a href="listaFilmow.php">Lista filmow</a><br>
+<hr>
 <h1>Lista filmow</h1>
 
 <?php
@@ -53,5 +52,6 @@ foreach($FilmAll as $row) {
 oci_close($Film);
 ?>
 
+</hr>
 </body>
 </html>

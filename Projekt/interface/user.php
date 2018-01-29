@@ -9,15 +9,14 @@ if (!($_SESSION['logged_in']==true)) {
 <html>
 <head>
 <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
-<title>Moje konto</title>
+<title>Logowanie</title>
 </head>
 <body>
-<hr>
 <a href="home.php">Strona glowna</a><br>
 <a href="auth.php">Zaloguj sie</a><br>
-<a href="listaFilmow.php">Lista filmow</a><bre>
-</hr>
-<h1>Moje konto</h1>
+<a href="listaFilmow.php">Lista filmow</a><br>
+<hr>
+<h1>Logowanie</h1>
 
 <?php
 if ($_SESSION['user_logged_in']==true) {
@@ -60,5 +59,6 @@ else {
 }
 ?>
 
+</hr>
 </body>
 </html>
