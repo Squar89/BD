@@ -4,6 +4,25 @@ if (!($_SESSION['logged_in']==true)) {
     echo 'Odmowa dostepu. Musisz sie najpierw zalogowac. <a href="login.php">Zaloguj sie tutaj</a>';
     exit();
 }
+?>
+
+<html>
+<head>
+<meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+<title>Moje konto</title>
+</head>
+<body>
+<hr>
+<a href="home.php">Strona glowna</a><br>
+<a href="auth.php">Zaloguj sie</a><br>
+<a href="listaFilmow.php">Lista filmow</a><bre>
+</hr>
+<h1>Moje konto</h1>
+
+<?php
+if ($_SESSION['user_logged_in']==true) {
+    echo 'Jestes juz zalogowany jako $_SESSION[user_name]';
+}
 
 if (!isset($_POST[username])) {
     echo 'Nie jestes zalogowany. <a href="auth.php">Zaloguj sie tutaj</a>';
@@ -22,21 +41,24 @@ if (!$connection) {
     exit();
 }
 
-echo "Parametry POST<br>";#
-echo "<pre>".print_r($_POST, true)."</pre>";#
-
 $checkUsername = oci_parse($connection, "SELECT id FROM uzytkownik WHERE nazwa_uzytkownika = :nazwa_uzytkownika");
 oci_bind_by_name($checkUsername, ":nazwa_uzytkownika", $_POST[username]);
 oci_execute($checkUsername);
 $rowCount = oci_fetch_all($checkUsername, $checkUsernameAll, 0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
 
-echo "<pre>".print_r($checkUsernameAll, true)."</pre>";#
-
 if (empty($checkUsernameAll)) {
     echo '<a href="auth.php">Nie ma takiego uzytkownika. Upewnij sie, ze poprawnie wpisales login lub zaloz nowe konto</a>';
     exit();
 }
+else {
+    $_SESSION['user_id']=$checkUsernameAll[0][ID];
+    $_SESSION['user_name']=$_POST[username];
+    $_SESSION['user_logged_in']=true;
 
-echo "Tutaj cos bedzie";
-
+    echo 'Zostales poprawnie zalogowany! <a href="user.php">Przejdz tutaj</a>';
+    exit();
+}
 ?>
+
+</body>
+</html>
