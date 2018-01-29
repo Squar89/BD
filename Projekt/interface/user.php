@@ -14,7 +14,7 @@ if (!($_SESSION['auth']==true)) {
 <body>
 <a href="home.php">Strona glowna</a><br>
 <a href="login.php">Zaloguj sie</a><br>
-<a href="listaFilmow.php">Lista filmow</a><br>
+<a href="lista_filmow.php">Lista filmow</a><br>
 <hr>
 <h1>Logowanie</h1>
 
