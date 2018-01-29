@@ -128,7 +128,7 @@ CREATE OR REPLACE TRIGGER id_pozycja_trigger
 BEFORE INSERT ON pozycja
 FOR EACH ROW
 BEGIN
-  SELECT id_pozycja_seq.nextval INTO :NEW.id FROM dual;
+  SELECT id_pozycja_seq.nextval INTO :NEW.pozycja FROM dual;
 END;
 /
 
