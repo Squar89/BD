@@ -104,6 +104,10 @@ CREATE SEQUENCE id_ocena_seq
 START WITH 1
 INCREMENT BY 1;
 
+CREATE SEQUENCE id_pozycja_seq
+START WITH 1
+INCREMENT BY 1;
+
 CREATE OR REPLACE TRIGGER id_uzytkownik_trigger
 BEFORE INSERT ON uzytkownik
 FOR EACH ROW
@@ -117,6 +121,14 @@ BEFORE INSERT ON ocena_filmu
 FOR EACH ROW
 BEGIN
   SELECT id_ocena_seq.nextval INTO :NEW.id FROM dual;
+END;
+/
+
+CREATE OR REPLACE TRIGGER id_pozycja_trigger
+BEFORE INSERT ON pozycja
+FOR EACH ROW
+BEGIN
+  SELECT id_pozycja_seq.nextval INTO :NEW.id FROM dual;
 END;
 /
 
