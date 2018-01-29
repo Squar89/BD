@@ -15,4 +15,4 @@ DROP VIEW lista_do_obejrzenia;
 
 DROP SEQUENCE id_uzytkownik_seq;
 DROP SEQUENCE id_ocena_seq;
-DROP SEQUENCE if_pozycja_seq;
+DROP SEQUENCE id_pozycja_seq;
