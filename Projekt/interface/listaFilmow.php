@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!($_SESSION['logged_in']==true)) {
-    echo 'Odmowa dostepu. Musisz sie najpierw zalogowac. <a href="login.php">Zaloguj sie tutaj</a>';
+if (!($_SESSION['auth']==true)) {
+    echo 'Odmowa dostepu. Potwierdz swoja tozsamosc <a href="auth.php">tutaj</a>';
     exit();
 }
 ?>
@@ -13,7 +13,7 @@ if (!($_SESSION['logged_in']==true)) {
 </head>
 <body>
 <a href="home.php">Strona glowna</a><br>
-<a href="auth.php">Zaloguj sie</a><br>
+<a href="login.php">Zaloguj sie</a><br>
 <a href="listaFilmow.php">Lista filmow</a><br>
 <hr>
 <h1>Lista filmow</h1>

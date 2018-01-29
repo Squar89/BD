@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!($_SESSION['logged_in']==true)) {
-    echo 'Odmowa dostepu. Musisz sie najpierw zalogowac. <a href="login.php">Zaloguj sie tutaj</a>';
+if (!($_SESSION['auth']==true)) {
+    echo 'Odmowa dostepu. Potwierdz swoja tozsamosc <a href="auth.php">tutaj</a>';
     exit();
 }
 ?>
@@ -13,23 +13,26 @@ if (!($_SESSION['logged_in']==true)) {
 </head>
 <body>
 <a href="home.php">Strona glowna</a><br>
-<a href="auth.php">Zaloguj sie</a><br>
+<a href="login.php">Zaloguj sie</a><br>
 <a href="listaFilmow.php">Lista filmow</a><br>
 <hr>
 <h1>Logowanie</h1>
 
 <?php
 if ($_SESSION['user_logged_in']==true) {
-    echo 'Jestes juz zalogowany jako $_SESSION[user_name]';
+    echo 'Jestes juz zalogowany jako <b>';
+    echo $_SESSION[user_name];
+    echo '</b>. <a href="logout.php">Wyloguj sie</a> lub <a href="home.php">przejdz do strony glownej</a>';
+    exit();
 }
 
 if (!isset($_POST[username])) {
-    echo 'Nie jestes zalogowany. <a href="auth.php">Zaloguj sie tutaj</a>';
+    echo 'Ooops, chyba zabladziles. <a href="login.php">Zaloguj sie tutaj</a>';
     exit();
 }
 
 if ($_POST[username]=="") {
-    echo 'Bledna nazwa uzytkownika! <a href="auth.php">Sprobuj ponownie</a>';
+    echo 'Bledna nazwa uzytkownika! <a href="login.php">Sprobuj ponownie</a>';
     exit();
 }
 
@@ -46,7 +49,7 @@ oci_execute($checkUsername);
 $rowCount = oci_fetch_all($checkUsername, $checkUsernameAll, 0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
 
 if (empty($checkUsernameAll)) {
-    echo '<a href="auth.php">Nie ma takiego uzytkownika. Upewnij sie, ze poprawnie wpisales login lub zaloz nowe konto</a>';
+    echo '<a href="login.php">Nie ma takiego uzytkownika. Upewnij sie, ze poprawnie wpisales login lub zaloz nowe konto</a>';
     exit();
 }
 else {
@@ -54,7 +57,7 @@ else {
     $_SESSION['user_name']=$_POST[username];
     $_SESSION['user_logged_in']=true;
 
-    echo 'Zostales poprawnie zalogowany! <a href="user.php">Przejdz tutaj</a>';
+    echo 'Zostales poprawnie zalogowany! <a href="home.php">Przejdz tutaj</a>';
     exit();
 }
 ?>

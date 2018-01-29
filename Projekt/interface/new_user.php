@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!($_SESSION['logged_in']==true)) {
-    echo 'Odmowa dostepu. Musisz sie najpierw zalogowac. <a href="login.php">Zaloguj sie tutaj</a>';
+if (!($_SESSION['auth']==true)) {
+    echo 'Odmowa dostepu. Potwierdz swoja tozsamosc <a href="auth.php">tutaj</a>';
     exit();
 }
 ?>
@@ -13,19 +13,26 @@ if (!($_SESSION['logged_in']==true)) {
 </head>
 <body>
 <a href="home.php">Strona glowna</a><br>
-<a href="auth.php">Zaloguj sie</a><br>
+<a href="login.php">Zaloguj sie</a><br>
 <a href="listaFilmow.php">Lista filmow</a><br>
 <hr>
 <h1>Rejestracja</h1>
 
 <?php
+if ($_SESSION['user_logged_in']==true) {
+    echo 'Jestes juz zalogowany jako <b>';
+    echo $_SESSION[user_name];
+    echo '</b>. <a href="logout.php">Wyloguj sie</a> lub <a href="home.php">przejdz do strony glownej</a>';
+    exit();
+}
+
 if (!isset($_POST[new_username])) {
-    echo 'Ooops, chyba zabladziles. <a href="auth.php">Zarejestruj sie tutaj</a>';
+    echo 'Ooops, chyba zabladziles. <a href="login.php">Zarejestruj sie tutaj</a>';
     exit();
 }
 
 if ($_POST[new_username]=="") {
-    echo 'Bledna nazwa uzytkownika! <a href="auth.php">Sprobuj ponownie</a>';
+    echo 'Bledna nazwa uzytkownika! <a href="login.php">Sprobuj ponownie</a>';
     exit();
 }
 
@@ -42,7 +49,7 @@ oci_execute($checkUsername);
 $rowCount = oci_fetch_all($checkUsername, $checkUsernameAll, 0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
 
 if (!empty($checkUsernameAll)) {
-    echo '<a href="auth.php">Istnieje juz uzytkownik o danej nazwie! Zaloguj sie lub wybierz inna nazwe</a>';
+    echo '<a href="login.php">Istnieje juz uzytkownik o danej nazwie! Zaloguj sie lub wybierz inna nazwe</a>';
     oci_close($connection);
     exit();
 }
@@ -57,7 +64,7 @@ oci_bind_by_name($checkUsername, ":nazwa_uzytkownika", $_POST[new_username]);
 oci_execute($checkUsername);
 $rowCount = oci_fetch_all($checkUsername, $checkUsernameAll, 0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
 if (empty($checkUsernameAll)) {
-    echo 'Cos poszlo nie tak, <a href="auth.php">sprobuj ponownie</a>';
+    echo 'Cos poszlo nie tak, <a href="login.php">sprobuj ponownie</a>';
     oci_close($connection);
     exit();
 }
