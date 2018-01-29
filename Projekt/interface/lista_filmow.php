@@ -10,6 +10,11 @@ if (!($_SESSION['auth']==true)) {
 <head>
 <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
 <title>Lista filmow</title>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
 </head>
 <body>
 <a href="home.php">Strona glowna</a><br>
@@ -34,7 +39,7 @@ $rowCount = oci_fetch_all($Film, $FilmAll, 0, -1, OCI_FETCHSTATEMENT_BY_ROW + OC
 $colCount = oci_num_fields($Film);
 asort($FilmAll);
 
-echo "<table style=\"width:100%\">";
+echo '<table width="100%">';
 echo "<tr>";
 for ($i = 1; $i <= $colCount; $i++) {
     echo "<th>" . oci_field_name($Film, $i) . "</th>";
@@ -48,6 +53,7 @@ foreach($FilmAll as $row) {
     }
     echo "</tr>";
 }
+echo "</table>";
 
 oci_close($Film);
 ?>
