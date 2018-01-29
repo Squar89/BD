@@ -25,7 +25,11 @@ else {
 
 <?php
 if ($_SESSION['user_logged_in']==false) {
-    echo 'Wybierz konto lub zaloz nowe jesli jeszcze tego nie robiles <a href="login.php">tutaj</a>';
+    echo '<h3>Witaj na Brak Nazwy!</h3>';
+    echo 'Wszystko do czego aktualnie masz dostep znajduje sie u gory strony.<br>';
+    echo 'Aktualnie mozesz jedynie przegladac liste filmow oraz zalozyc konto, reszta funkcji bedzie dostepna po zalogowaniu.<br>';
+    echo 'Jesli jeszcze tego nie zrobiles, to <a href="login.php">zaloz konto</a><br>';
+    echo 'Jesli jestes juz uzytkownikiem Brak Nazwy, to <a href="login.php">zaloguj sie</a><br>';
     exit();
 }
 else {

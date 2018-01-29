@@ -40,20 +40,20 @@ $colCount = oci_num_fields($Film);
 asort($FilmAll);
 
 echo '<table width="100%">';
-echo "<tr>";
+echo '<tr>';
 for ($i = 1; $i <= $colCount; $i++) {
-    echo "<th>" . oci_field_name($Film, $i) . "</th>";
+    echo '<th>' . oci_field_name($Film, $i) . '</th>';
 }
-echo "</tr>";
+echo '</tr>';
 
 foreach($FilmAll as $row) {
-    echo "<tr>";
+    echo '<tr>';
     foreach($row as $field) {
-        echo "<td>" . $field . "</td>";
+        echo '<td>' . $field . '</td>';
     }
-    echo "</tr>";
+    echo '</tr>';
 }
-echo "</table>";
+echo '</table>';
 
 oci_close($Film);
 ?>

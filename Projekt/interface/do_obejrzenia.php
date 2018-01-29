@@ -52,6 +52,8 @@ if (isset($_POST['id_filmu']) AND isset($_POST['akcja'])) {
         oci_bind_by_name($usun, ":id_filmu", $_POST['id_filmu']);
         oci_execute($usun);
     }
+
+    oci_close($connection);
 }
 ?>
 
