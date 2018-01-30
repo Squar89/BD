@@ -63,6 +63,8 @@ CREATE TABLE uzytkownik (
 
 ALTER TABLE uzytkownik ADD CONSTRAINT uzytkownik_pk PRIMARY KEY ( id );
 
+ALTER TABLE uzytkownik ADD CONSTRAINT original_name UNIQUE ( nazwa_uzytkownika );
+
 ALTER TABLE film
     ADD CONSTRAINT film_gatunek_fk FOREIGN KEY ( gatunek_id )
         REFERENCES gatunek ( id );
@@ -112,7 +114,7 @@ CREATE OR REPLACE TRIGGER id_uzytkownik_trigger
 BEFORE INSERT ON uzytkownik
 FOR EACH ROW
 BEGIN
-  SELECT id_uzytkownik_seq.nextval INTO :NEW.id FROM dual;
+    SELECT id_uzytkownik_seq.nextval INTO :NEW.id FROM dual;
 END;
 /
 
@@ -120,7 +122,7 @@ CREATE OR REPLACE TRIGGER id_ocena_trigger
 BEFORE INSERT ON ocena_filmu
 FOR EACH ROW
 BEGIN
-  SELECT id_ocena_seq.nextval INTO :NEW.id FROM dual;
+    SELECT id_ocena_seq.nextval INTO :NEW.id FROM dual;
 END;
 /
 
@@ -128,7 +130,7 @@ CREATE OR REPLACE TRIGGER id_pozycja_trigger
 BEFORE INSERT ON pozycja
 FOR EACH ROW
 BEGIN
-  SELECT id_pozycja_seq.nextval INTO :NEW.pozycja FROM dual;
+    SELECT id_pozycja_seq.nextval INTO :NEW.pozycja FROM dual;
 END;
 /
 
@@ -136,11 +138,11 @@ CREATE OR REPLACE TRIGGER update_rating
 AFTER INSERT ON ocena_filmu
 FOR EACH ROW
 BEGIN
-  IF :NEW.ocena IS NOT NULL THEN
-    UPDATE film SET film.liczba_ocen = film.liczba_ocen + 1 WHERE film.id = :NEW.film_id;
-    UPDATE film SET film.srednia_ocen = film.srednia_ocen + ((CAST(:NEW.ocena AS number(*, 2)) - film.srednia_ocen) / CAST(film.liczba_ocen AS number(*, 2)))
-                WHERE film.id = :NEW.film_id;
-  END IF;
+    IF :NEW.ocena IS NOT NULL THEN
+        UPDATE film SET film.liczba_ocen = film.liczba_ocen + 1 WHERE film.id = :NEW.film_id;
+        UPDATE film SET film.srednia_ocen = film.srednia_ocen + ((CAST(:NEW.ocena AS number(*, 2)) - film.srednia_ocen) / CAST(film.liczba_ocen AS number(*, 2)))
+                    WHERE film.id = :NEW.film_id;
+    END IF;
 END;
 /
 
