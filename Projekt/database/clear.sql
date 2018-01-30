@@ -4,6 +4,8 @@ DROP TRIGGER id_pozycja_trigger;
 DROP TRIGGER update_rating;
 DROP TRIGGER delete_after_rating;
 
+DROP INDEX film_index;
+
 DROP TABLE ocena_filmu;
 DROP TABLE pozycja;
 DROP TABLE uzytkownik;
